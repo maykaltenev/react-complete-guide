@@ -3,37 +3,56 @@ import React, { useState } from 'react';
 import './ExpenseForm.css';
 
 const ExpenseForm = () => {
-
+    submitHandler()
     // Option 1
-    // const [enteredTitle, setEnteredTitle] = useState('');
-    // const [enteredAmount, setEnteredAmount] = useState('');
-    // const [enteredDate, setEnteredDate] = useState('');
+    const [enteredTitle, setEnteredTitle] = useState('');
+    const [enteredAmount, setEnteredAmount] = useState('');
+    const [enteredDate, setEnteredDate] = useState('');
     // Option 2 => update all the objects 
-    const [userInput, setUserInput] = useState({
-        enteredTitle: '',
-        enteredAmount: '',
-        enteredDate: '',
-    });
-    const titleChangeHandler = (event) => {
-        // setEnteredTitle(event.target.value)
-        setUserInput({
-            ...userInput,
-            enteredTitle: event.target.value,
-        })
-    };
+    // const [userInput, setUserInput] = useState({
+    //     enteredTitle: '',
+    //     enteredAmount: '',
+    //     enteredDate: '',
+    // });
+    function titleChangeHandler(event) {
+        setEnteredTitle(event.target.value);
+        // setUserInput({
+        //     ...userInput,
+        //     enteredTitle: event.target.value,
+        // })
+        // safer way to ensure the last state
+        // setUserInput((prevState) => {
+        //     return { ...prevState, enteredTitle: event.target.value };
+        // });
+    }
     const amountChangeHandler = (event) => {
-        // setEnteredAmount(event.target.value)
-        setUserInput({
-            ...userInput,
-            enteredAmount: event.target.value,
-        })
+        setEnteredAmount(event.target.value)
+        // Option 2.a
+        // setUserInput({
+        //     ...userInput,
+        //     enteredAmount: event.target.value,
+        // })
+        // Option 2.b
+        // setUserInput((prevState) => {
+        //     return { ...prevState, enteredAmount: event.target.value }
+        // });
     };
     const dateChangeHandler = (event) => {
-        // setEnteredDate(event.target.value)
-        setUserInput({
-            ...userInput,
-            enteredDate: event.target.value,
-        })
+        // Option 1
+        setEnteredDate(event.target.value)
+        // Option 2.a
+        // setUserInput({
+        //     ...userInput,
+        //     enteredDate: event.target.value,
+        // })
+        //Option 2.b
+        // setUserInput((prevState) => {
+        //     return { ...prevState, dateChangeHandler: event.target.value }
+        // });
+    };
+
+    const submitHandler = (event) => {
+        event.preventDefault()
     };
 
     return <form>
