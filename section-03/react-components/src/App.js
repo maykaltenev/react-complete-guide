@@ -1,6 +1,7 @@
 
 import React from "react";
-import Expenses from "./components/Expenses";
+import NewExpense from "./components/NewExpense/NewExpense";
+import Expenses from "./components/Expenses/Expenses";
 // custom name components is named with capital letters
 function App(props) {
   const expenses = [
@@ -26,8 +27,7 @@ function App(props) {
   ];
   return (
     <div>
-      <h2>Let's get started!</h2>
-      <p>This is also visible</p>
+      <NewExpense />
       <Expenses items={expenses} />
     </div >
   );
