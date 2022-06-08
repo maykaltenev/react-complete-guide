@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './ExpensesFilter.css';
 
 const ExpensesFilter = (props) => {
     const onChangeHandler = (event) => {
-        console.log(event.target.value)
+        props.onChangeFilter(event.target.value);
     }
     return (
         <div className='expenses-filter' >
