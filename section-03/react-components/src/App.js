@@ -25,19 +25,23 @@ function App(props) {
       date: new Date(2021, 5, 12),
     },
   ];
+  const addExpenseHandler = expense => {
+    console.log('In App.js');
+    console.log(expense);
+  }
   return (
     <div>
-      <NewExpense />
+      <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses items={expenses} />
     </div >
   );
 }
-// old way
-// return React.createElement(
+{/* // old way */ }
+{/* // return React.createElement(
 //   'div',
 //   {},
 //   React.createElement('h2', {}, 'Lets get started'),
 //   React.createElement(Expenses, { items: expenses })
-// )
+// ) */}
 
 export default App;
