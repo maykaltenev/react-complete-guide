@@ -1,3 +1,5 @@
+
+import React from "react";
 import Expenses from "./components/Expenses";
 // custom name components is named with capital letters
 function App(props) {
@@ -30,4 +32,12 @@ function App(props) {
     </div >
   );
 }
+// old way
+// return React.createElement(
+//   'div',
+//   {},
+//   React.createElement('h2', {}, 'Lets get started'),
+//   React.createElement(Expenses, { items: expenses })
+// )
+
 export default App;
