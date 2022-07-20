@@ -7,7 +7,7 @@ export default function MealItemForm(props) {
     const amountInputRef = useRef();
     const submitHandler = event => {
         event.preventDefault();
-        const enteredAmount = amountInputRef.current.value
+        const enteredAmount = amountInputRef.current.value;
         const enteredAmountNumber = +enteredAmount;
         if (
             enteredAmount.trim().length === 0 ||
@@ -32,7 +32,7 @@ export default function MealItemForm(props) {
                     defaultValue: '1'
                 }} />
             < button > + Add</button>
-            {!amountIsValid && <p> Please enter a valid (1-5)</p>}
+            {!amountIsValid && <p>Please enter a valid (1-5)</p>}
         </form >
     )
 }
