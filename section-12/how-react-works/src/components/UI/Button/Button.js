@@ -2,7 +2,7 @@ import React from 'react';
 
 import classes from './Button.module.css';
 
-export default function Button(props) {
+const Button = (props) => {
   return (
     <button
       type={props.type || 'button'}
@@ -16,3 +16,4 @@ export default function Button(props) {
 };
 
 
+export default React.memo(Button)
