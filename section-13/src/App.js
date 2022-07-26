@@ -1,10 +1,34 @@
-import Users from './components/Users';
+// import Users from './components/Users';
+
+// function App() {
+//   return (
+//     <div>
+//       <Users />
+//     </div>
+//   );
+// }
+
+// export default App;
+
+
+import UserFinder from './components/UserFinder';
+import UsersContext from './store/users-context';
+
+export const DUMMY_USERS = [
+  { id: 'u1', name: 'Max' },
+  { id: 'u2', name: 'Manuel' },
+  { id: 'u3', name: 'Julie' },
+];
 
 function App() {
+  const usersContext = {
+    users: DUMMY_USERS
+  }
+
   return (
-    <div>
-      <Users />
-    </div>
+    <UsersContext.Provider value={usersContext}>
+      <UserFinder />
+    </UsersContext.Provider>
   );
 }
 
